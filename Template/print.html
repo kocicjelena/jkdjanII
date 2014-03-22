@@ -1,0 +1,16 @@
+{% load staticfiles %}
+
+    <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}" />
+<p>Your new blog is saved: <strong>{{ query }}</strong></p>
+
+{% if books %}
+    <p>Found {{ blogs|length }} blog{{ blogs|pluralize }}.</p>
+    <ul>
+        {% for blog in blogs %}
+        <li>{{ blog.name }}</li>
+        <li>{{ blog.tagline }}</li>
+        {% endfor %}
+    </ul>
+{% else %}
+    <p>No blogs </p>
+{% endif %}

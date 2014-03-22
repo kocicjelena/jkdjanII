@@ -1,0 +1,20 @@
+<html>
+<head>
+    <title>Input</title>
+    {% load staticfiles %}
+
+    <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}" />
+</head>
+<body>
+    {% if error %}
+        <p style="color: red;">Please submit blog</p>
+    {% endif %}
+    <div id="nav">
+    <form action="" method="get">
+        <input type="text" name="q">
+        <input type="text" name="b">
+        <input type="submit" value="Input">
+    </form>
+    </div>
+</body>
+</html>

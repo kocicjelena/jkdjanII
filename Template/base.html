@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+{% load staticfiles %}
+
+    <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}" />
+<title>{% block title %}My amazing library{% endblock %}</title>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+</head>
+<body>
+  <div id="main">
+    <header>
+      <div id="logo">
+        <div id="logo_text">
+          <!-- class="logo_colour", allows you to change the colour of the text -->
+          <h1><a href="index.html">home<span class="logo_colour"></span></a></h1>
+          <h2></h2>
+        </div>
+        <form method="post" action="#" id="search">
+          <input class="search" type="text" name="search_field" value="search....." onclick="javascript: document.forms['search'].search_field.value=''" />
+          <input name="search" type="image" style="float: right;border: 0; margin: 20px 0 0 0;" src="images/search.png" alt="search" title="search" />
+        </form>
+      </div>
+      <nav>
+        <ul class="sf-menu" id="nav">
+          <li class="current"><a href="index.html">Home</a></li>
+          <li><a href="/blog/search/">search</a></li>
+          <li><a href="/blog/fo/">foo</a></li>
+          <li><a href="/blog/blog/entries/">entries</a></li>
+          <li><a href="/blog/blogs_of_author/">blogs of author</a>
+            <ul>
+              <li><a href="/blog/fo/">fo</a></li></li>
+              <li><a href="/blog/bar/">Bar</a>
+                <ul>
+                  <li><a href="/blog/fo/">foo</a></li>
+                  <li><a href="/blog/f/">f</a></li>
+                  <li><a href="#">Sub Drop Down Three</a></li>
+                  <li><a href="#">Sub Drop Down Four</a></li>
+                  <li><a href="#">Sub Drop Down Five</a></li>
+                </ul>
+              </li>
+              <li><a href="#">Drop Down Three</a></li>
+              <li><a href="#">Drop Down Four</a></li>
+              <li><a href="#">Drop Down Five</a></li>
+            </ul>
+          </li>
+          <li><a href="contact.html">Contact Us</a></li>
+        </ul>
+      </nav>
+    </header>
+<div id="sidebar">
+{% block sidebar %}
+<div id="nav">
+</div>
+{% endblock %}
+</div>
+<div id="site_content">
+      <div id="sidebar_container">
+        <div class="sidebar">
+          <h3>Latest News</h3>
+          <div class="sidebar_item">
+            <h4>New Website Launched</h4>
+            <h5>January 1st, 2014</h5>
+            <p><br /><a href="#">Read more</a></p>
+          </div>
+          <div class="sidebar_base"></div>
+        </div>
+        <div class="sidebar">
+          <h3>Useful Links</h3>
+          <div class="sidebar_item">
+            <ul>
+              <li><a href="#">link 1</a></li>
+              <li><a href="#">link 2</a></li>
+              <li><a href="#">link 3</a></li>
+              <li><a href="#">link 4</a></li>
+            </ul>
+          </div>
+          <div class="sidebar_base"></div>
+        </div>
+        <div class="sidebar">
+          <h3>More Useful Links</h3>
+          <div class="sidebar_item">
+            <ul>
+              <li><a href="#">link 1</a></li>
+              <li><a href="#">link 2</a></li>
+              <li><a href="#">link 3</a></li>
+              <li><a href="#">link 4</a></li>
+            </ul>
+          </div>
+          <div class="sidebar_base"></div>
+        </div>
+      </div>
+      <div class="content">
+        <h1>Welcome</h1>
+        <div class="content_item">
+          <p><strong></strong>.</p>
+      </div>
+      </div>
+      <div class="content">
+        <h1></h1>
+        <div class="content_item">
+          <p></p>
+          <ul>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+          </ul>
+        </div>
+      </div>
+	  {% block content %}{% endblock %}
+    </div>
+    <footer>
+      <p><a href="index.html">Home</a> | <a href=""></a> | <a href="page.html">A Page</a> | <a href="another_page.html">Another Page</a> | <a href="contact.html">Contact Us</a></p>
+      <p>2014 | <a href=""></a></p>
+    </footer>
+  </div>
+  <!-- javascript at the bottom for fast page loading -->
+  <script type="text/javascript" src="js/jquery.js"></script>
+
+</body>
+</html>

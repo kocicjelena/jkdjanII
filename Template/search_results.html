@@ -1,0 +1,15 @@
+{% load staticfiles %}
+
+    <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}" />
+<p>You searched for: <strong>{{ query }}</strong></p>
+
+{% if Blog %}
+    
+    <ul>
+        {% for blog in books %}
+        <li>{{ Blog.name }}</li>
+        {% endfor %}
+    </ul>
+{% else %}
+    <p>No books matched your search criteria.</p>
+{% endif %}
